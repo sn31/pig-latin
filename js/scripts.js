@@ -9,12 +9,31 @@ var letterChecker = function (inputStr) {
   }
 }
 
+var moveConsonants = function (input) {
+  var index = 0;
+  var startOfVowel = 0;
+
+  while (index < input.length) {
+    if (vowels.includes(input.charAt(index))) {
+      startOfVowel = index;
+      break;
+    }
+    else {
+      index++;
+    }
+  }
+  consonantSubStr = input.substring(0,startOfVowel);
+  resultWord = input.substring(startOfVowel,input.length) + consonantSubStr +"ay";
+  return resultWord;
+}
 
 var vowelChecker = function(input){
   var resultWord = input;
   var consonantSubStr ="";
+
   if (input.charAt(0) === "y" || "Y") {
     vowels = ["a","e","i","o","u"];
+    return moveConsonants(input);
   }
   if(vowels.includes(input.charAt(0))) {
     resultWord += "way";
@@ -23,25 +42,10 @@ var vowelChecker = function(input){
     consonantSubStr = input.substring(0,2);
     resultWord = input.substring(2,input.length) +consonantSubStr+"ay";
   }
+
   else if (!vowels.includes(input.charAt(0))) {
-    var index = 0;
-    var startOfVowel = 0;
-
-    while (index < input.length) {
-      if (vowels.includes(input.charAt(index))) {
-        startOfVowel = index;
-        break;
-      }
-      else {
-        index++;
-      }
-    }
-    console.log(startOfVowel); //1
-    consonantSubStr = input.substring(0,startOfVowel);
-    resultWord = input.substring(startOfVowel,input.length) + consonantSubStr +"ay";
-    console.log(resultWord); //esyay
+    return moveConsonants(input);
   }
-
   return resultWord;
 }
 
