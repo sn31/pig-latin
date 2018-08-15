@@ -64,8 +64,9 @@ $(document).ready(function () {
     var input = inputStr.split(" ");
     for (var i = 0; i < input.length; i++) {
       $("#result").append(" " + vowelChecker(input[i]));
+      
     }
-
+    
   });
 
 
