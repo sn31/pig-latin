@@ -19,10 +19,11 @@ The Pig Latin translator takes in a sentence, apply one of the rules below and r
 
 | Specifications|  Input      | Expected Output   
 | ------------- |-------------|-------------:|
-| For words beginning with a vowel, add "way" to the end. | alter| alterway
-|For words beginning with one or more consonants, move all of the first consecutive consonants to the end, and add "ay".| school| oolschay
-| If the first consonants include "qu", move the "u" along with the "q". | queen| eenquay
-| For words beginning with "y", treat "y" as a consonant | yes| esyay
+| The program does nothing to non-alphabetical characters, since they do not contain consonants or vowels. | word123| blank
+| The program adds "way" to single-letter words beginning with a vowel. | alter| alterway
+| The program move the first consecutive consonants to the back of the word and add "ay" for words beginning with consonants.| school| oolschay
+| The program treats "qu" as a consonant if they are at the beginning of the word. | queen| eenquay
+| The program treats y as a consonant if the word starts with y. | yes| esyay
 
 
 ## Setup/Installation Requirements
