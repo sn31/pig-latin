@@ -13,6 +13,21 @@ var vowelChecker = function(input){
   if(vowels.includes(input.charAt(0))) {
     resultWord += "way";
   }
+  else if (!vowels.includes(input.charAt(0))) {
+    var index = 0;
+    var startOfVowel = 0;
+    while (index < input.length) {
+      if (vowels.includes(input.charAt(index))) {
+        startOfVowel = index;
+        break;
+      }
+      else {
+        index++;
+      }
+    }
+    var consonantSubStr = input.substring(0,startOfVowel);
+    resultWord = input.substring(startOfVowel,input.length) + consonantSubStr +"ay";
+  }
 
   return resultWord;
 }
@@ -30,6 +45,6 @@ $(document).ready(function(){
     }
 
   });
-  console.log(letterChecker("hi my name is sss"));
+  
 
 });
