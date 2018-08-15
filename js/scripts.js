@@ -10,8 +10,13 @@ var letterChecker = function (inputStr) {
 }
 var vowelChecker = function(input){
   var resultWord = input;
+  var consonantSubStr ="";
   if(vowels.includes(input.charAt(0))) {
     resultWord += "way";
+  }
+  else if (input.substring(0,2) ===  "qu" || "QU" || "Qu" || "qU") {
+    consonantSubStr = input.substring(0,2);
+    resultWord = input.substring(2,input.length) +consonantSubStr+"ay";
   }
   else if (!vowels.includes(input.charAt(0))) {
     var index = 0;
@@ -25,7 +30,7 @@ var vowelChecker = function(input){
         index++;
       }
     }
-    var consonantSubStr = input.substring(0,startOfVowel);
+    consonantSubStr = input.substring(0,startOfVowel);
     resultWord = input.substring(startOfVowel,input.length) + consonantSubStr +"ay";
   }
 
@@ -37,7 +42,7 @@ $(document).ready(function(){
     event.preventDefault();
 
     $("#result").empty();
-    var inputStr = $("#inputStr").val();
+    var inputStr = $("#inputStr").val().trim();
     if (!letterChecker(inputStr)) { alert ("Please enter a valid sentence!")}
     var input = inputStr.split(" ");
     for (var i=0; i<input.length;i++) {
@@ -45,6 +50,6 @@ $(document).ready(function(){
     }
 
   });
-  
+
 
 });
