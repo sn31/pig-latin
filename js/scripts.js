@@ -11,8 +11,12 @@ var vowelChecker = function(input){
 $(document).ready(function(){
   $("#input").submit(function(event){
     event.preventDefault();
-
+    $("#result").empty();
     var inputStr = $("#inputStr").val();
-    $("#result").append(vowelChecker(inputStr));
+    var input = inputStr.split(" ");
+    for (var i=0; i<input.length;i++) {
+      $("#result").append(" "+vowelChecker(input[i]));
+    }
+
   });
 });
