@@ -1,28 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Pig Latin</title>
-    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
-    <script src="js/jquery-3.3.1.js"></script>
-    <script src="js/scripts.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="jumbotron">
-        <h1>Pig Latin Translator</h1>
-      </div>
 
-      <form id="input">
-        <label>Original String</label>
-        <input type="text" id="inputStr" />
-        <button class="btn btn-info" type="submit">Submit</button>
-      </form>
-      <div id="result">
+<head>
+  <meta charset="utf-8">
+  <title>Pig Latin</title>
+  <link href="css/styles.css" rel="stylesheet" type="text/css" />
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/scripts.js"></script>
+</head>
 
-      </div>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Pig Latin Translator</h1>
     </div>
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Translation Rules</h2>
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>For words beginning with a vowel, add "way" to the end.</li>
 
-  </body>
+          <li>For words beginning with one or more consonants, move all of the first consecutive consonants to the end, and add
+            "ay".</li>
+
+          <li>If the first consonants include "qu", move the "u" along with the "q". Don't forget about words like "squeal" where
+            "qu" doesn't come first!</li>
+
+          <li>For words beginning with "y", treat "y" as a consonant.</li>
+        </ul>
+      </div>
+
+    </div>
+    <form id="input">
+      <label>Original String</label>
+      <input type="text" id="inputStr" />
+      <button class="btn btn-info" type="submit">Submit</button>
+    </form>
+    <div id="result">
+
+    </div>
+  </div>
+
+</body>
+
 </html>
